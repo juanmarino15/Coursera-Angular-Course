@@ -18,6 +18,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from "@angular/material/slider";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import 'hammerjs';
@@ -78,6 +79,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatSliderModule,
     MatProgressSpinnerModule,
     HttpClientModule
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyC8NiNUBFizIjsBq9CbrQsM-bL0rxtZ5Uo'
+    // })
   ],
   providers: [
     DishService,
