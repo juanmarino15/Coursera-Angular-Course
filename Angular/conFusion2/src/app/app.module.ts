@@ -80,7 +80,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatProgressSpinnerModule,
     HttpClientModule
     // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyC8NiNUBFizIjsBq9CbrQsM-bL0rxtZ5Uo'
+    //   apiKey: ''
     // })
   ],
   providers: [
