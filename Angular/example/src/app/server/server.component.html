@@ -1,1 +1,6 @@
-<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }} </p>
+<p [ngStyle] = "{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">
+    
+    {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }} 
+
+</p> <!--directives usually start with ng. in this exmaple we are binding to a property of the directive-->
