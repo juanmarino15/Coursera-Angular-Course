@@ -6,17 +6,13 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" 
-        class="list-group-item clearfix" 
-        *ngFor="let recipe of recipes">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-                <p class="list-group-item-text">{{ recipe.description }}</p>
-            </div>
-            <span class="pull-right">
-                <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-responsive" style="max-height: 50px;">
-            </span>
-        </a>
-        <app-recipes-item></app-recipes-item>
+        <app-recipes-item 
+        *ngFor="let recipeEl of recipes"
+        [recipe] = "recipeEl"
+        (recipeSelected)="onRecipeSelected(recipeEl)"> 
+        <!-- recipeEl is the iteration element, we are passing value to [recipe] so it can be used to the child component (recipes-item.component) -->
+        <!-- is called binding, on the recipe-item component we @import to get the value -->
+
+        </app-recipes-item>
     </div>
 </div>

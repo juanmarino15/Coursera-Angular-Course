@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component,EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'app-header',
@@ -6,5 +6,11 @@ import { Component } from "@angular/core";
 })
 
 export class HeaderComponent{
-    collapsed = true;
+    //@output enables the event to be listened by the parent component
+    @Output() featureSelected = new EventEmitter<string>(); //creating a new event emitter type string. the parentesis create an object
+
+
+    onSelect(feature: string){
+        this.featureSelected.emit(feature)
+    }
 }
