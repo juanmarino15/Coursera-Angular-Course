@@ -6,13 +6,45 @@
         (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
       <br><br>
       <ul class="list-group">
-        <li
-          class="list-group-item">
-        </li>
+        <div *ngIf="onlyOdd">
+          <!-- ng styles evaluates if odd is an odd number. if it is then will background color yellow if not it will be transparent -->
+          <li
+          class="list-group-item"
+          [ngClass] = "{odd: odd% 2 !==0}"
+          [ngStyle] = "{backgroundColor:odd% 2 !==0 ? 'yellow' : 'transparent'}" 
+          *ngFor ="let odd of oddNumbers">
+          {{ odd }}
+          </li>
+        </div>
+        <!-- anything starting with a * is a structural directive -->
+    
+      <!-- <ng-template [ngIf]="!onlyOdd">
+        <div>
+          <li
+          class="list-group-item"
+          [ngClass] = "{even: even % 2 ===0}"
+          *ngFor ="let even of evenNumbers">
+          {{ even }}
+          </li>
+        </div> -->
+      <!-- </ng-template> -->
+          <div *appUnless="onlyOdd">
+            <li
+              class="list-group-item"
+              [ngClass] = "{even: even % 2 ===0}"
+              *ngFor ="let even of evenNumbers">
+              {{ even }}
+            </li>
+        </div>
       </ul>
-      <ng-template [ngIf]="onlyOdd">
-        <p>Only odd</p>
-      </ng-template>
+      <p appBasicHighlight>Style me with basic directive!</p>
+      <p [appBetterHighlight]="'red'" [defaultColor] = "'yellow'">Style me with a better directive!</p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">value is 5</p>
+        <p *ngSwitchCase="10">value is 10</p>
+        <p *ngSwitchCase="100">value is 100</p>
+        <p *ngSwitchDefault>value is default</p>
+      </div>
     </div>
   </div>
 </div>
