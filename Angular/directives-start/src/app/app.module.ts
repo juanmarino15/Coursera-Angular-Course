@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BasichighlighDirective } from './basic-highlight/basic-highlight-directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasichighlighDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
