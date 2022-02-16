@@ -1,0 +1,8 @@
+.container {
+  margin-top: 30px;
+}
+
+/* these two classes are dynamically added by angular when actions are happening in the form */
+input.ng-invalid.ng-touched{ 
+  border: 1px solid red;
+}
